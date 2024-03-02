@@ -1,5 +1,6 @@
 
 package Modelo;
+import Controlador.MailUtil;
 import Vista.Administrar;
 
 
@@ -8,6 +9,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import jakarta.mail.*;
+import jakarta.mail.internet.*;
+import jakarta.activation.DataHandler;
 public class Conexion {
     
     String bd = "moviesdb";
@@ -41,6 +45,7 @@ public class Conexion {
         admin.setVisible(true);
             Conexion prueba = new Conexion();
             prueba.conectar();
+            MailUtil.sendEmail("fcarreno.lavin@gmail.com", "prueba", "la prueba");
     }
     public boolean ejecutaSQL(String cadenaSQL){
         try{
@@ -63,6 +68,11 @@ public class Conexion {
             System.out.println("Error: "+e);
             return null;
         }
+        
+    }
+    
+    public void enviarMail(){
+        
         
     }
 }

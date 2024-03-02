@@ -124,6 +124,17 @@ public class Movies {
         return resultado;
     }
     
+    public void enviarMail(){
+        
+        Conexion conect = new Conexion();
+        conect.conectar();
+        boolean resultado = false;
+        
+        
+        
+        
+    }
+    
     public Object[][] llenaTabla(String[] cabeceras){
         Conexion conecta = new Conexion();
         conecta.conectar();
